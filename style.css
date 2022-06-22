@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  margin: 0 auto;
+  margin-top: 33.34vh;
+  width: 821px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main span {
+  font-family: 'Roboto';
+  font-size: 126.166px;
+  line-height: 148px;
+  text-transform: uppercase;
+  color: #323238;
+  font-size: clamp(4rem, 1rem + 11vw, 6.8rem);
+}
+
+.buttons {
+  margin-top: 48px;
+  display: flex;
+  gap: 40px;
+}
+
+.buttons button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.cards {
+  display: grid;
+  grid-template-areas:
+    'A B'
+    'C D';
+
+  gap: 32px;
+  margin-left: 192px;
+}
+
+.card button {
+  width: 138px;
+  height: 152px;
+  background: #e1e1e6;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+/* CARD ACTIVE */
+
+.card button.active {
+  background: #02799d;
+}
+
+.card button.active svg path {
+  fill: white;
+}
+
+/* BUTTONS ACTIVE */
+
+.buttons button.active svg path {
+  fill: #02799d;
+}
