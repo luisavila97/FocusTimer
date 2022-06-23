@@ -3,6 +3,7 @@ const audio = Audios();
 const endTimerAudio = new Audio(
   'https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true'
 );
+endTimerAudio.volume = 0.3;
 
 const buttonPlay = document.querySelector('#play');
 const buttonStop = document.querySelector('#stop');
@@ -31,12 +32,12 @@ buttonStop.addEventListener('click', function () {
   clearTimeout(timer);
   minutes = 25;
   seconds = 0;
-  updateDisplay(minutes, seconds);
+  updateDisplay();
 });
 
 buttonPlus.addEventListener('click', () => {
   minutes += 5;
-  updateDisplay(minutes, seconds);
+  updateDisplay();
 });
 
 buttonMinus.addEventListener('click', () => {
@@ -44,10 +45,10 @@ buttonMinus.addEventListener('click', () => {
   if (minutes <= 0) {
     minutes = 0;
   }
-  updateDisplay(minutes, seconds);
+  updateDisplay();
 });
 
-function updateDisplay(minutes, seconds) {
+function updateDisplay() {
   minutesDisplay.textContent = String(minutes).padStart(2, '0');
   secondsDisplay.textContent = String(seconds).padStart(2, '0');
 }
@@ -56,7 +57,7 @@ function countdown() {
   timer = setTimeout(() => {
     if (seconds <= 0) {
       minutes--;
-      updateDisplay(minutes);
+      updateDisplay();
 
       seconds = 60;
     }
@@ -66,11 +67,11 @@ function countdown() {
       minutes = 0;
       seconds = 0;
       endTimerAudio.play();
-      updateDisplay(minutes, seconds);
+      updateDisplay();
       return;
     }
 
-    updateDisplay(minutes, seconds);
+    updateDisplay();
     countdown();
   }, 1000);
 }
