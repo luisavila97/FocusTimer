@@ -4,10 +4,20 @@
   box-sizing: border-box;
 }
 
+:root {
+  font-size: 65.5%;
+
+  --animation-time: 700ms;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
 .page {
   margin: 0 auto;
   margin-top: 33.34vh;
-  width: 821px;
+  width: 82.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,17 +25,17 @@
 
 main span {
   font-family: 'Roboto';
-  font-size: 126.166px;
-  line-height: 148px;
+  line-height: 14.8rem;
   text-transform: uppercase;
   color: #323238;
-  font-size: clamp(4rem, 1rem + 11vw, 6.8rem);
+  font-size: clamp(4rem, 1rem + 11vw, 11.8rem);
+  transition: color var(--animation-time);
 }
 
 .buttons {
-  margin-top: 48px;
+  margin-top: 2rem;
   display: flex;
-  gap: 40px;
+  gap: 4rem;
 }
 
 .buttons button {
@@ -40,8 +50,8 @@ main span {
     'A B'
     'C D';
 
-  gap: 32px;
-  margin-left: 192px;
+  gap: 3.2rem;
+  margin-left: 19.2rem;
 }
 
 .card section {
@@ -50,24 +60,44 @@ main span {
   align-items: center;
   justify-content: space-evenly;
 
-  width: 138px;
-  height: 152px;
+  width: 13.8rem;
+  height: 15.2rem;
   background: #e1e1e6;
-  border-radius: 24px;
+  border-radius: 2.4rem;
   border: none;
+
+  transition: background var(--animation-time);
 }
 
 .card section button {
-  width: 120px;
-  height: 80px;
+  width: 12rem;
+  height: 8rem;
   cursor: pointer;
   background-color: transparent;
   border: none;
 }
 
 .card section input {
-  width: 100px;
+  width: 10rem;
   cursor: pointer;
+}
+
+/* dark mode button */
+
+.dark-btn {
+  position: absolute;
+  top: 2.5rem;
+  right: 5rem;
+}
+
+.dark-btn button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dark-btn .hide {
+  display: none;
 }
 
 /* CARD ACTIVE */
@@ -84,4 +114,45 @@ main span {
 
 .buttons button.active svg path {
   fill: #02799d;
+}
+
+body {
+  background-color: white;
+  transition: background var(--animation-time);
+}
+
+/* DARK MODE */
+
+body.dark {
+  background-color: black;
+
+  transition: background var(--animation-time);
+}
+
+body.dark span {
+  color: white;
+  transition: color var(--animation-time);
+}
+
+body.dark section {
+  background-color: #29292e;
+
+  transition: background var(--animation-time);
+}
+
+body.dark section svg path {
+  fill: #c4c4cc;
+  transition: fill var(--animation-time);
+}
+
+body.dark .buttons button svg path {
+  fill: #c4c4cc;
+  transition: fill var(--animation-time);
+}
+
+.dark .buttons button.active svg path {
+  fill: #02799d;
+}
+body.dark .card section.active {
+  background: #0a3442;
 }

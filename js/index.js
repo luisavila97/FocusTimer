@@ -1,5 +1,8 @@
 import Audios from './audios.js';
-const audio = Audios();
+import DarkMode from './darkMode.js';
+
+DarkMode();
+Audios();
 const endTimerAudio = new Audio(
   'https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true'
 );
