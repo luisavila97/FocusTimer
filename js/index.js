@@ -1,4 +1,4 @@
-import Audios from './audios.js';
+import Audios from './AudiosJs/audios.js';
 import DarkMode from './darkMode.js';
 
 DarkMode();
